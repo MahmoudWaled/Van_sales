@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="van_sales_root_menu"
+        name="Van Sales" />
+    <menuitem
+        id="operations_menu"
+        name="Operations"
+        parent="van_sales_root_menu" />
+</odoo>
