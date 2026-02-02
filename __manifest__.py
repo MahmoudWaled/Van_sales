@@ -9,6 +9,7 @@
         'views/base_view.xml',
         'views/van_route_view.xml',
         'views/hr_employee_view.xml',
+        'views/sale_order.xml'
     ],
     'installable': True,
     'application': True,

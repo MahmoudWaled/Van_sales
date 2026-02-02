@@ -10,6 +10,7 @@
                 <field name="name" />
                 <field name="region" />
                 <field name="day_of_week" />
+                <field name="user_id" />
             </list>
         </field>
     </record>
@@ -28,6 +29,7 @@
                         </group>
                         <group>
                             <field name="day_of_week" />
+                            <field name="user_id" />
                         </group>
                     </group>
                     <notebook>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"></field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="allowed_partners_ids" invisible="1" />
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="domain">[('id','in',allowed_partners_ids)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="collection_mode" />
+            </xpath>
+        </field>
+    </record>
+
+
+    <menuitem
+        id="sale_order_menu"
+        name="orders"
+        action="sale.action_orders"
+        parent="operations_menu" />
+
+</odoo>

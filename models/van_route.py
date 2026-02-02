@@ -17,3 +17,5 @@ class VanRoute(models.Model):
         ('6', 'Sunday'),
     ], string='Scheduled Day')
     partner_ids = fields.Many2many('res.partner', string='Customers')
+    user_id = fields.Many2one('res.users', string='Salesperson',
+                              required=True, default=lambda self: self.env.user)
