@@ -21,7 +21,7 @@
 
     <menuitem
         id="sale_order_menu"
-        name="orders"
+        name="Orders"
         action="sale.action_orders"
         parent="operations_menu" />
 
