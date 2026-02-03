@@ -184,7 +184,7 @@ msgstr "الأحد"
 #. module: van_sales
 #: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
 msgid "Thank you for your business!"
-msgstr "شكراً لتعاملكم معنا!"
+msgstr ""
 
 #. module: van_sales
 #: model:ir.model.fields.selection,name:van_sales.selection__van_route__day_of_week__3
