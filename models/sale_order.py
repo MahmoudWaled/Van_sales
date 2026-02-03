@@ -32,24 +32,17 @@ class SaleOrder(models.Model):
                 ])
 
     def action_confirm(self):
-        print('****** from action_confirm method ******')
         # validation: check if the van is empty or products less than ordered qty
         for order in self:
             employee = self.env['hr.employee'].search(
                 [('user_id', '=', order.user_id.id)], limit=1)
             if employee and employee.van_location_id:
                 van_location = employee.van_location_id
-                print(f"***** Van Location: {van_location.name} *****")
                 for line in order.order_line:
-                    print(
-                        f"***** Checking product: {line.product_id.name} *****")
                     if line.product_id.type == 'consu':
                         van_qty_available = line.product_id.with_context(
                             location=van_location.id).qty_available
-                        print(
-                            f"***** Product: {line.product_id.name}, Van Qty Available: {van_qty_available}, Ordered Qty: {line.product_uom_qty} *****")
                         if van_qty_available < line.product_uom_qty:
-                            print('***** Raising UserError for stock shortage *****')
                             raise UserError(_(
                                 f"Stock shortage in your van for product: ({line.product_id.name})\n"
                                 f"Current Stock: {van_qty_available}\n"
@@ -57,7 +50,6 @@ class SaleOrder(models.Model):
                             ))
 
         res = super(SaleOrder, self).action_confirm()
-        print('****** after super in action_confirm method ******')
         # Modification: change picking location to van location and move location to van location
         for order in self:
             employee = self.env['hr.employee'].search(
@@ -65,11 +57,7 @@ class SaleOrder(models.Model):
             if employee and employee.van_location_id:
                 for picking in order.picking_ids:
                     picking.location_id = employee.van_location_id.id
-                    print(
-                        f"***** Updated picking location to van location: {employee.van_location_id.name} *****")
                     for move in picking.move_ids:
                         move.location_id = employee.van_location_id.id
-                        print(
-                            f"***** Updated move location to van location: {employee.van_location_id.name} *****")
 
         return res
