@@ -14,6 +14,8 @@ class SaleOrder(models.Model):
 
     allowed_partners_ids = fields.Many2many(
         'res.partner', compute='_compute_allowed_partners')
+    amount_to_text_ar = fields.Char(
+        compute='_compute_amount_to_text_ar', string='Amount to Text')
 
     @api.depends('user_id')
     def _compute_allowed_partners(self):
@@ -30,6 +32,15 @@ class SaleOrder(models.Model):
             else:
                 order.allowed_partners_ids = self.env['res.partner'].search([
                 ])
+
+    @api.depends('amount_total', 'currency_id')
+    def _compute_amount_to_text_ar(self):
+        for order in self:
+            if order.currency_id:
+                order.amount_to_text_ar = order.currency_id.with_context(
+                    lang='ar_001').amount_to_text(order.amount_total)
+            else:
+                order.amount_to_text_ar = ""
 
     def action_confirm(self):
         # validation: check if the van is empty or products less than ordered qty
