@@ -50,14 +50,32 @@ class SaleOrder(models.Model):
                             ))
 
         res = super(SaleOrder, self).action_confirm()
-        # Modification: change picking location to van location and move location to van location
+        # Modification & Automation: change picking location to van location and move location to van location
+        #   then automate validating picking , creating & posting invoice and create the payment if collection is cash
         for order in self:
             employee = self.env['hr.employee'].search(
                 [('user_id', '=', order.user_id.id)], limit=1)
             if employee and employee.van_location_id:
+                van_location = employee.van_location_id
                 for picking in order.picking_ids:
-                    picking.location_id = employee.van_location_id.id
+                    picking.location_id = van_location.id
                     for move in picking.move_ids:
-                        move.location_id = employee.van_location_id.id
-
+                        move.location_id = van_location.id
+                        move.quantity = move.product_uom_qty
+                    # validate picking
+                    picking.with_context(skip_backorder=True).button_validate()
+                # create & post invoice
+                if order.invoice_status == 'to invoice':
+                    invoice = order._create_invoices()
+                    invoice.action_post()
+                    # create payment if collection mode is cash
+                    if order.collection_mode == 'cash':
+                        journal = self.env['account.journal'].search(
+                            [('type', '=', 'cash')], limit=1)
+                        if journal:
+                            self.env['account.payment.register'].with_context(
+                                active_model='account.move',
+                                active_ids=invoice.ids,).create({
+                                    'journal_id': journal.id,
+                                })._create_payments()
         return res
