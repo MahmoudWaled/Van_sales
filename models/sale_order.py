@@ -86,7 +86,7 @@ class SaleOrder(models.Model):
                         if journal:
                             self.env['account.payment.register'].with_context(
                                 active_model='account.move',
-                                active_ids=invoice.ids,).create({
+                                active_ids=invoice.ids,).sudo().create({
                                     'journal_id': journal.id,
                                 })._create_payments()
         return res

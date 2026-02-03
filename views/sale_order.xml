@@ -15,6 +15,9 @@
             <xpath expr="//field[@name='payment_term_id']" position="after">
                 <field name="collection_mode" />
             </xpath>
+            <xpath expr="//button[@name='action_view_invoice']" position="attributes">
+                <attribute name="groups">van_sales.group_van_sales_manager</attribute>
+            </xpath>
         </field>
     </record>
 

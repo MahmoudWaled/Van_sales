@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_van_route,access_van_route,model_van_route,,1,1,1,1
+access_van_route_user,access_van_route_user,model_van_route,group_van_sales_user,1,0,0,0
+access_van_route_manager,access_van_route_manager,model_van_route,group_van_sales_manager,1,1,1,1

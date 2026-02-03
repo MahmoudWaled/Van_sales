@@ -1,0 +1,289 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* van_sales
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-03 19:21+0000\n"
+"PO-Revision-Date: 2026-02-03 19:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "<strong>التاريخ / Date: </strong>"
+msgstr "<strong>التاريخ / Date: </strong>"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "<strong>العميل / Customer: </strong>"
+msgstr "<strong>العميل / Customer: </strong>"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "<strong>رقم الإيصال / Receipt: </strong>"
+msgstr "<strong>رقم الإيصال / Receipt: </strong>"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "<strong>طريقة الدفع / Payment: </strong>"
+msgstr "<strong>طريقة الدفع / Payment: </strong>"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_sale_order__allowed_partners_ids
+msgid "Allowed Partners"
+msgstr "العملاء المسموح بهم"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_sale_order__amount_to_text_ar
+msgid "Amount to Text"
+msgstr "التفقيط"
+
+#. module: van_sales
+#: model:ir.model.fields.selection,name:van_sales.selection__sale_order__collection_mode__cash
+msgid "Cash"
+msgstr "نقدي"
+
+#. module: van_sales
+#: model:ir.model.fields.selection,name:van_sales.selection__sale_order__collection_mode__check
+msgid "Check"
+msgstr "شيك"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_sale_order__collection_mode
+msgid "Collection Mode"
+msgstr "طريقة التحصيل"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_van_route__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_van_route__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: van_sales
+#: model:ir.model.fields.selection,name:van_sales.selection__sale_order__collection_mode__credit
+msgid "Credit"
+msgstr "آجل"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_van_route__partner_ids
+#: model_terms:ir.ui.view,arch_db:van_sales.view_van_route_form
+msgid "Customers"
+msgstr "العملاء"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:van_sales.field_sale_order__display_name
+#: model:ir.model.fields,field_description:van_sales.field_van_route__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: van_sales
+#: model:ir.model,name:van_sales.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: van_sales
+#: model:ir.model.fields.selection,name:van_sales.selection__van_route__day_of_week__4
+msgid "Friday"
+msgstr "الجمعة"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_hr_employee__id
+#: model:ir.model.fields,field_description:van_sales.field_sale_order__id
+#: model:ir.model.fields,field_description:van_sales.field_van_route__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_van_route__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_van_route__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: van_sales
+#: model:ir.model.fields,help:van_sales.field_hr_employee__van_location_id
+msgid "Location representing the van stock."
+msgstr "الموقع الذي يمثل مخزون السيارة."
+
+#. module: van_sales
+#: model:res.groups,name:van_sales.group_van_sales_manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: van_sales
+#: model:ir.model.fields.selection,name:van_sales.selection__van_route__day_of_week__0
+msgid "Monday"
+msgstr "الإثنين"
+
+#. module: van_sales
+#: model:ir.ui.menu,name:van_sales.operations_menu
+msgid "Operations"
+msgstr "العمليات"
+
+#. module: van_sales
+#: model:ir.ui.menu,name:van_sales.sale_order_menu
+msgid "Orders"
+msgstr "الطلبات"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_van_route__region
+msgid "Region"
+msgstr "المنطقة"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_van_route__name
+msgid "Route Name"
+msgstr "اسم خط السير"
+
+#. module: van_sales
+#: model:ir.actions.act_window,name:van_sales.action_van_route
+#: model:ir.ui.menu,name:van_sales.van_route_menu
+msgid "Routes"
+msgstr "خطوط السير"
+
+#. module: van_sales
+#: model:ir.model,name:van_sales.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_van_route__user_id
+msgid "Salesperson"
+msgstr "مندوب المبيعات"
+
+#. module: van_sales
+#: model:ir.model.fields.selection,name:van_sales.selection__van_route__day_of_week__5
+msgid "Saturday"
+msgstr "السبت"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_van_route__day_of_week
+msgid "Scheduled Day"
+msgstr "اليوم المجدول"
+
+#. module: van_sales
+#: model:ir.model.fields.selection,name:van_sales.selection__van_route__day_of_week__6
+msgid "Sunday"
+msgstr "الأحد"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "Thank you for your business!"
+msgstr "شكراً لتعاملكم معنا!"
+
+#. module: van_sales
+#: model:ir.model.fields.selection,name:van_sales.selection__van_route__day_of_week__3
+msgid "Thursday"
+msgstr "الخميس"
+
+#. module: van_sales
+#: model:ir.model.fields.selection,name:van_sales.selection__van_route__day_of_week__1
+msgid "Tuesday"
+msgstr "الثلاثاء"
+
+#. module: van_sales
+#: model:res.groups,name:van_sales.group_van_sales_user
+msgid "User (Salesman)"
+msgstr "مستخدم (مندوب)"
+
+#. module: van_sales
+#: model:ir.actions.report,name:van_sales.action_report_van_receipt
+msgid "Van Receipt"
+msgstr "إيصال"
+
+#. module: van_sales
+#: model:ir.ui.menu,name:van_sales.van_sales_root_menu
+msgid "Van Sales"
+msgstr "المبيعات الميدانية"
+
+#. module: van_sales
+#: model:ir.model,name:van_sales.model_van_route
+msgid "Van Sales Route"
+msgstr "خط سير المبيعات الميدانية"
+
+#. module: van_sales
+#: model:ir.module.category,name:van_sales.module_category_van_sales
+msgid "Van Sales System"
+msgstr "المبيعات الميداني"
+
+#. module: van_sales
+#: model:ir.model.fields,field_description:van_sales.field_hr_employee__van_location_id
+msgid "Van location"
+msgstr "مخزن السيارة"
+
+#. module: van_sales
+#: model:ir.model.fields.selection,name:van_sales.selection__van_route__day_of_week__2
+msgid "Wednesday"
+msgstr "الأربعاء"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "آجل / Credit"
+msgstr "آجل / Credit"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "إجمالي/Total"
+msgstr "إجمالي/Total"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "الإجمالي قبل الضريبة / Subtotal:"
+msgstr "الإجمالي قبل الضريبة / Subtotal:"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "الصافي / Total Net:"
+msgstr "الصافي / Total Net:"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "الصنف / Item"
+msgstr "الصنف / Item"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "الضريبة / Tax (14%):"
+msgstr "الضريبة / Tax (14%):"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "رقم ضريبي:"
+msgstr "رقم ضريبي:"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "شكراً لتعاملكم معنا!"
+msgstr "شكراً لتعاملكم معنا!"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "شيك / Check"
+msgstr "شيك / Check"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "كمية/Quantity"
+msgstr "كمية/Quantity"
+
+#. module: van_sales
+#: model_terms:ir.ui.view,arch_db:van_sales.report_van_receipt_template
+msgid "نقدي / Cash"
+msgstr "نقدي / Cash"
+
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="module_category_van_sales" model="ir.module.category">
+        <field name="name">Van Sales System</field>
+        <field name="sequence">5</field>
+    </record>
+
+    <record id="group_van_sales_user" model="res.groups">
+        <field name="name">User (Salesman)</field>
+
+        <field name="implied_ids" eval="[(4,ref('sales_team.group_sale_salesman'))]" />
+    </record>
+
+    <record id="group_van_sales_manager" model="res.groups">
+        <field name="name">Manager</field>
+
+        <field name="implied_ids"
+            eval="[(4,ref('group_van_sales_user')),(4, ref('sales_team.group_sale_manager'))]" />
+        <field name="user_ids" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]" />
+    </record>
+
+
+    <record id="rule_van_route_user_own" model="ir.rule">
+        <field name="name">Van Route: Own Routes Only</field>
+        <field name="model_id" ref="model_van_route" />
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_van_sales_user'))]" />
+    </record>
+
+    <record id="rule_van_route_manager_all" model="ir.rule">
+        <field name="name">Van Route: Manager All</field>
+        <field name="model_id" ref="model_van_route" />
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_van_sales_manager'))]" />
+    </record>
+
+</odoo>
